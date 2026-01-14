@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Read(//Users/john/.claude/skills/workflow/**)",
-      "Read(//Users/john/.claude/skills/skill-foundry/**)"
+      "Read(//Users/john/.claude/skills/skill-foundry/**)",
+      "Bash(git commit --no-verify -m \"$\\(cat <<''EOF''\nInitial commit: agent-mcp-skills foundation\n\nLandscape document and session context for MCP-native architecture brainstorming.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
     ]
   }
 }

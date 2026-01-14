@@ -123,11 +123,42 @@ The MCP server doesn't care if requests come from browser chat, Claude Code term
 
 ---
 
+### 2026-01-14 ~late evening — Concept Mining
+
+**Capability Domains:**
+The term `capability_domains` from the landscape document's handoff example triggered deeper exploration. Found it sits at intersection of three lineages:
+1. **Enterprise Architecture** — capability mapping (what business does, not how)
+2. **Security** — object-capability model (unforgeable tokens of authority)
+3. **AI Agents** — tool capabilities (agent's action space)
+
+Synthesis: A **capability domain** is a coherent area of agent action, characterized by shared vocabulary, related permissions, and tools that frequently compose together.
+
+Implications: Domains become the organizing unit for MCP server design — scoping permissions, state, vocabulary, and trust boundaries.
+
+**MCP-On-Demand (Level 3 Architecture):**
+Explored whether agents can spawn MCP servers dynamically when existing tools are inadequate.
+
+Key sources:
+- Anthropic's "Code Execution with MCP" — tools as code APIs, agents save implementations as reusable skills
+- Cloudflare's "Code Mode" — MCP tools auto-converted to TypeScript, agent writes code in sandbox
+
+Assessment: **Yes, feasible now.** The gap between "agent writes code that uses tools" and "agent writes code that IS tools" is small. FastMCP makes server creation ~10 lines.
+
+Connection to capability domains: Dynamic tool generation becomes tractable when domain-scoped — the domain provides guardrails, vocabulary, and trust boundaries for generated tools.
+
+**Working Papers Produced:**
+- `capability-domains.md` — full synthesis of the concept
+- `mcp-on-demand.md` — Level 3 architecture analysis
+
+---
+
 ## Artifacts Produced
 
 | File | Purpose |
 |------|---------|
 | `agent-mcp-landscape-jan2026.md` | Cartographic foundation for skill briefing |
+| `capability-domains.md` | Concept paper: organizing principle for agent architecture |
+| `mcp-on-demand.md` | Concept paper: agents spawning their own tools |
 | `.claude/session-context.md` | Session state and progress tracking |
 
 ## Notes
@@ -135,4 +166,8 @@ The MCP server doesn't care if requests come from browser chat, Claude Code term
 - Focus: Brainstorming/planning, no implementation
 - Mode: Adaptive (conversational with structured questions at decision points)
 - User prefers to think slowly; session may span multiple sittings
-- Project being moved to top-level repo (was nested in capability-ecosystem)
+
+## Session Status
+Completed: 2026-01-14 late evening
+Servers cleaned: (none added)
+Tool count: N/A (no MCP servers used)
