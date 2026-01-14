@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/john/.claude/skills/workflow/**)",
+      "Read(//Users/john/.claude/skills/skill-foundry/**)"
+    ]
+  }
+}
